@@ -2,7 +2,7 @@
 
 ### Azure_CVO.ps1 Running <br />
 <p align="center">
-  <img src="https://github.com/jorgeedugona/AzureCVO/blob/master/Images/Image06.png" alt="Azure_CVO.ps1 Running"/>
+  <img src="https://github.com/jorgeedugona/AzureCVO/blob/master/Images/Image06_1.png" alt="Azure_CVO.ps1 Running"/>
 </p>
 
 ### Volume Creation<br />
