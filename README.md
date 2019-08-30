@@ -33,5 +33,4 @@ The script includes the following features:
 •	Creation and mounting of an NFS export where all the configuration files of vdbench are kept.
 •	Import of the vdbench binaries – (the binaries can be downloaded from the Oracle website, an account with Oracle is needed).  
 http://www.oracle.com/technetwork/server-storage/vdbench-downloads-1901681.html  
-•	Configuration of the vdbench files (e.g for NFS  “aff-host-nfs” “aff-luns-nfs”).  
- 
+•	Configuration of the vdbench files (e.g for NFS  “aff-host-nfs” “aff-luns-nfs”).
