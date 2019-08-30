@@ -1,11 +1,12 @@
 # POC-Scripts AzureCVO
 PoSH Script to deploy CVO with vdbench for POCs. 
 
-### Azure_CVO.ps1 Running... <br />
+### Azure_CVO.ps1 Running <br />
 <p align="center">
   <img src="https://github.com/jorgeedugona/AzureCVO/blob/master/Images/Image06.png" alt="Azure_CVO.ps1 Running"/>
 </p>
-### NFS Volumes... <br />
+
+### Volume Creation<br />
 <p align="center">
 <img src="https://github.com/jorgeedugona/AzureCVO/blob/master/Images/Image43_1.png" alt="Volume Creation"/>
 </p>
