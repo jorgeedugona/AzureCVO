@@ -1,5 +1,4 @@
-# POC-Scripts AzureCVO
-PoSH Script to deploy CVO with vdbench for POCs. 
+# PoSH Script to deploy Cloud Volumes ONTAP (CVO) with vdbench for performance POCs. 
 
 ### Azure_CVO.ps1 Running <br />
 <p align="center">
