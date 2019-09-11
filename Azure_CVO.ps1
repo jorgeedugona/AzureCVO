@@ -1,4 +1,4 @@
-. ./Variables.ps1
+﻿. ./Variables.ps1
 
 $ModuleFunctions = Get-Module -Name Azure_CVO_Functions
        if($ModuleFunctions){
@@ -41,13 +41,13 @@ Start-Job -Name JumpHost `
            } `
            -ScriptBlock {
                 param([string]$ResourceGroupName,[string]$VirtualNetworkName,[string]$Location,[string]$Path,[string[]]$IPLinuxVMs,[int]$NumberLinuxVMs)
-                # Windows use Standard_B1ms, Linux use Standard_B2s
+                # Windows use Standard_B2ms, Linux use Standard_B2s
                 Create-VM -VMLocalAdminUser 'netappcvo' -ComputerName 'JHvdbench' -VMType Windows `
-                          -VMSize Standard_B1ms -ResourceGroupName $ResourceGroupName -Location $Location `
+                          -VMSize Standard_B2ms -ResourceGroupName $ResourceGroupName -Location $Location `
                           -VirtualNetworkName $VirtualNetworkName -ScriptPath $Path             
           } `
           -ArgumentList $ResourceGroupName,$VirtualNetworkName,$Location,$Path,$IPLinuxVMs,$NumberLinuxVMs | Out-Null
-# Windows use Standard_B1ms, Linux use Standard_B2s
+# Windows use Standard_B2s, Linux use Standard_B2s
 
 # Create Linux VMs
 $I = 1
@@ -64,7 +64,7 @@ Start-Job -Name $JobName `
            } `
           -ScriptBlock {
                param([string]$ResourceGroupName,[string]$VirtualNetworkName,[string]$Location,[string]$PrivateIPAddress,[string]$ComputerName,[string[]]$IPLinuxVMs,[int]$NumberLinuxVMs)
-               # Windows use Standard_B1ms, Linux use Standard_B2s
+               # Windows use Standard_B2s, Linux use Standard_B2s
                Create-VM -VMLocalAdminUser 'netappcvo' -ComputerName $ComputerName -VMType Linux `
                          -VMSize Standard_B2s -ResourceGroupName $ResourceGroupName -Location $Location `
                          -VirtualNetworkName $VirtualNetworkName -PrivateIPAddress $PrivateIPAddress `

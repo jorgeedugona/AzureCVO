@@ -1,29 +1,33 @@
-##############################
+﻿##############################
 # Name of the Resource Group #
 ##############################
 $ResourceGroupName = 'NetApp-RG-vdbench'
 
-############
-# Location #
-############
+#########################
+# Azure Region/Location #
+#########################
 $Location = 'UK South'
 
-######################################
-# Max Number of Linux (Slaves is 10) #
-######################################
-$NumberLinuxVMs = 1
+##############################################
+# Number of Linux Workers (Max number is 10) #
+##############################################
+$NumberLinuxVMs = 2
 
-########################
-# Volume size is in GB #
-########################
+######################
+# File Size is in GB #
+######################
 [string]$FileSize = 1
 
-#########################################################
-# Volume size is in GB, It must be bigger than Filesize #
-#########################################################
+############################################################
+# Volume size is in GB, It must be 10 bigger than Filesize #
+############################################################
 [string]$VolumeSize = 20
 
-##################################
-# Number of Volumes per Linux VM #
-##################################
-$NumberVolumesPerVM = 6 ## It must be an even number as there are two aggregates. 
+#########################################
+# Number of Volumes per Linux Worker VM #
+#########################################
+###########################################################################
+## Important Note: It must be an even number as there are two aggregates ##
+###########################################################################
+$NumberVolumesPerVM = 6 
+ 

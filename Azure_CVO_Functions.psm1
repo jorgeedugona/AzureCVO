@@ -1,4 +1,4 @@
-Function Create-VM
+﻿Function Create-VM
 {
      param(
 
@@ -11,7 +11,7 @@ Function Create-VM
          [ValidateSet('Linux','Windows')] $VMType,
          [string] 
          [Parameter(Mandatory = $true, Position=4)] 
-         [ValidateSet('Standard_B2s','Standard_B1ms')]$VMSize,
+         [ValidateSet('Standard_B2s','Standard_B2ms')]$VMSize,
          [string] 
          [Parameter(Mandatory = $true, Position=5)] $ResourceGroupName,
          [string] 
@@ -43,7 +43,7 @@ if($VMType -eq "Windows"){
 
 $PublisherName = 'MicrosoftWindowsServer'
 $Offer = 'WindowsServer'
-$Skus = '2012-R2-Datacenter'
+$Skus = '2016-Datacenter'
 #$VMType = 'Standard_B2s'
 $VirtualMachine = New-AzVMConfig -VMName $VMName -VMSize $VMSize
 $VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName $ComputerName -Credential $Credential -ProvisionVMAgent -EnableAutoUpdate
@@ -228,7 +228,7 @@ if($PSSHHVersion){
                 $Install = Read-Host "Do you want to install the lastest version? Yes/No "
                 if($Install -eq "Yes"){
     
-                     Install-Module -Name Posh-SSH -Scope CurrentUser -Force -RequiredVersion 1.7.7 -Confirm:$false
+                     Install-Module -Name Posh-SSH -Scope CurrentUser -Force -Confirm:$false
                      #Import Posh-SSH Module....
                      Import-Module -Name Posh-SSH -ErrorAction SilentlyContinue -WarningAction SilentlyContinue
 
