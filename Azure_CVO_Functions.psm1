@@ -229,7 +229,7 @@ if($PSSHHVersion){
                 $Install = Read-Host "Do you want to install the lastest version? Yes/No "
                 if($Install -eq "Yes"){
     
-                     Install-Module -Name Posh-SSH -Scope CurrentUser -Force -Confirm:$false -ProxyCredential
+                     Install-Module -Name Posh-SSH -Scope CurrentUser -Force -Confirm:$false
                      #Import Posh-SSH Module....
                      Import-Module -Name Posh-SSH -ErrorAction SilentlyContinue -WarningAction SilentlyContinue
 
