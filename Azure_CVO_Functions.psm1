@@ -11,7 +11,7 @@
          [ValidateSet('Linux','Windows')] $VMType,
          [string] 
          [Parameter(Mandatory = $true, Position=4)] 
-         [ValidateSet('Standard_B2s','Standard_B2ms')]$VMSize,
+         [ValidateSet('Standard_B2s','Standard_B2ms', 'Standard_B8ms')]$VMSize,
          [string] 
          [Parameter(Mandatory = $true, Position=5)] $ResourceGroupName,
          [string] 
@@ -216,6 +216,7 @@ param(
          )
 
 # Importing Module Posh-SSH
+$ProgressPreference = "SilentlyContinue";
 
 $PSSHHVersion = Get-InstalledModule -Name Posh-SSH -ErrorAction SilentlyContinue -WarningAction SilentlyContinue
 
@@ -228,7 +229,7 @@ if($PSSHHVersion){
                 $Install = Read-Host "Do you want to install the lastest version? Yes/No "
                 if($Install -eq "Yes"){
     
-                     Install-Module -Name Posh-SSH -Scope CurrentUser -Force -Confirm:$false
+                     Install-Module -Name Posh-SSH -Scope CurrentUser -Force -Confirm:$false -ProxyCredential
                      #Import Posh-SSH Module....
                      Import-Module -Name Posh-SSH -ErrorAction SilentlyContinue -WarningAction SilentlyContinue
 
@@ -500,7 +501,7 @@ param(
          [Parameter(Mandatory = $true, Position=8)] $NumberLinuxVMs                                          
 
      )
-
+$ProgressPreference = "SilentlyContinue";
 $secpasswd = ConvertTo-SecureString "Netapp1!" -AsPlainText -Force
 $mycreds = New-Object System.Management.Automation.PSCredential ("netappcvo", $secpasswd)
 $DataAggr = $DataAggrName[0]

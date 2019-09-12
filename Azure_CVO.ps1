@@ -64,9 +64,9 @@ Start-Job -Name $JobName `
            } `
           -ScriptBlock {
                param([string]$ResourceGroupName,[string]$VirtualNetworkName,[string]$Location,[string]$PrivateIPAddress,[string]$ComputerName,[string[]]$IPLinuxVMs,[int]$NumberLinuxVMs)
-               # Windows use Standard_B2s, Linux use Standard_B2s
+               # Windows use Standard_B2s, Linux use Standard_B8ms
                Create-VM -VMLocalAdminUser 'netappcvo' -ComputerName $ComputerName -VMType Linux `
-                         -VMSize Standard_B2s -ResourceGroupName $ResourceGroupName -Location $Location `
+                         -VMSize Standard_B8ms -ResourceGroupName $ResourceGroupName -Location $Location `
                          -VirtualNetworkName $VirtualNetworkName -PrivateIPAddress $PrivateIPAddress `
                          -IPLinuxVMs $IPLinuxVMs -NumberLinuxVMs $NumberLinuxVMs
                        } `
