@@ -10,6 +10,12 @@
 <img src="https://github.com/jorgeedugona/AzureCVO/blob/master/Images/Image43_1.png" alt="Volume Creation"/>
 </p>
 
+### Diagram <br />
+<p align="center">
+  <img src="https://github.com/jorgeedugona/AzureCVO/blob/master/Images/Image50.PNG" alt="Diagram"/>
+</p>
+
+
 Please find below the prerequisites to run the script:  
 • PowerShell 5.0 or 5.1.  
 • PAYG Azure Subscription.  
